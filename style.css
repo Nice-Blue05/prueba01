@@ -1,0 +1,183 @@
+/* Variables CSS para manejo de colores */
+:root {
+    --primary-color: #007bff; /* Azul */
+    --secondary-color: #6c757d; /* Gris */
+    --background-color: #f4f7f6; /* Fondo ligero */
+    --text-color: #333;
+    --card-background: #fff;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+/* --- Encabezado Principal (Hero) --- */
+.hero {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.hero h1 {
+    margin-bottom: 5px;
+    font-size: 2.5em;
+}
+
+.hero h2 {
+    font-size: 1.2em;
+    font-weight: 400;
+    opacity: 0.9;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 5px solid white;
+}
+
+/* --- Contenedor Principal --- */
+.container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: grid;
+    /* Diseño de cuadrícula simple para secciones */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* --- Estilo de las Tarjetas (Secciones) --- */
+.card {
+    background: var(--card-background);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--background-color);
+    padding-bottom: 8px;
+}
+
+.card ul {
+    list-style: none; /* Elimina los puntos predeterminados */
+}
+
+.card ul li {
+    margin-bottom: 10px;
+    padding-left: 10px;
+    /* Simula un bullet point personalizado */
+    position: relative;
+}
+
+.card ul li::before {
+    content: '•';
+    color: var(--primary-color);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+
+/* --- Habilidades (Skills) --- */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skills li {
+    background: var(--primary-color);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9em;
+    transition: background 0.3s ease;
+    cursor: pointer;
+    list-style: none; /* Asegura que no tenga bullets */
+}
+
+.skills li::before {
+    content: none; /* Elimina el bullet personalizado */
+}
+
+.skills li:hover {
+    background: #0056b3; /* Un tono más oscuro */
+}
+
+/* --- Botones --- */
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.secondary-btn {
+    background-color: var(--secondary-color);
+    margin-left: 10px;
+}
+
+.secondary-btn:hover {
+    background-color: #5a6268;
+}
+
+.contact-card p {
+    margin-bottom: 15px;
+}
+
+/* --- Pie de Página --- */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #f4f7f6;
+    margin-top: 30px;
+    font-size: 0.9em;
+}
+
+/* --- Media Queries para responsividad (Móvil) --- */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+        gap: 15px;
+    }
+    .hero h1 {
+        font-size: 2em;
+    }
+}
